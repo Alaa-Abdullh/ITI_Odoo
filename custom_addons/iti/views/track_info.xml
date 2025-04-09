@@ -1,0 +1,49 @@
+<odoo>
+
+     <record id="track_action" model="ir.actions.act_window">
+        <field name="name">track Action</field>
+        <field name="res_model">iti.track</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="view_iti_track_form" model="ir.ui.view">
+        <field name="name">student track</field>
+        <field name="model">iti.track</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <notebook>
+                        <!-- Personal Info Tab -->
+                        <page string="track Info">
+                            <group>
+                                <field name="name"/>
+                                <field name="is_append"/>
+                                <field name="capacity"/>
+                                <field name="student_ids"/>
+
+                            </group>
+                        </page>
+
+
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+<record id="view_iti_track_tree" model="ir.ui.view">
+        <field name="name">iti track </field>
+        <field name="model">iti.track</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="is_append"/>
+                <field name="capacity"/>
+
+            </tree>
+        </field>
+    </record>
+    <menuitem id="iti_track_menu" name="track" parent="iti_data_menu" action="track_action"/>
+
+</odoo>
